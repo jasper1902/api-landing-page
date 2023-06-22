@@ -15,9 +15,12 @@ import {
   deleteUserById,
   ResetPasswordUserById,
 } from "../controllers/UserController.js";
+import { Hello } from "../controllers/Hello.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/RefreshToken.js";
 const router = express.Router();
+
+router.get("/", Hello);
 
 //auth
 router.get("/api/users", verifyToken, getUsers);
